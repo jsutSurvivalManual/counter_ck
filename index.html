@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="cn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="theme-color" content="#3F51B5">
+    <title>流量消耗器</title>
+    <meta name="description" content="The most straightforward way to waste all of your data">
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <main>
+        <form>
+            <fieldset id="header">
+                <hgroup>
+                    <h1>流量消耗工具</h1>
+                    <p>
+                        此工具用于消耗不需要的流量。<br />
+                        此工具通过按照参数通过浏览器下载数据来消耗流量。所有操作均在你的浏览器执行。
+                    </p>
+                </hgroup>
+            </fieldset>
+
+            <fieldset>
+                <label for="size">需要跑掉多少流量？(单位：MB)</label>
+                <input name="size" id="size" type="number" value="0" required>
+            </fieldset>
+
+            <fieldset>
+                <label for="thread">线程数量？(单位：个，介于 1 到 32 之间，越少控制越精确。)</label>
+                <input name="thread" id="thread" type="number" value="1" max="32" min="1" required>
+            </fieldset>
+
+            <fieldset>
+                <label for="targets">目标（默认为微软的游戏文件）:</label>
+                <textarea id="targets"></textarea>
+            </fieldset>
+
+            <aside>
+                <button id="reset">重设</button>
+                <div>
+                    <button id="start">开始</button>
+                    <button id="stop">结束</button>
+                </div>
+            </aside>
+
+            <hr />
+
+            <fieldset>
+                <h5>已消耗的流量： <code id="ttc">0 MB</code></h5>
+                <h5>已完成的请求数： <code id="reqc">0 个</code></h5>
+                <h5>错误请求数： <code id="err">0 个</code></h5>
+                <h5>池子数量 <code id="poolc">0 个</code></h5>
+            </fieldset>
+        </form>
+    </main>
+</body>
+
+
+<script src="script.js" defer></script>
+
+</html>
